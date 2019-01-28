@@ -100,7 +100,7 @@ function html5blank_header_scripts()
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
 {
-    if (is_singular('long-form')) {
+    if (is_single()) {
         wp_register_script('contents-menu-scripts', get_template_directory_uri() . '/js/contents-menu.js', '1.0.0', '', true); // Custom scripts
         wp_enqueue_script('contents-menu-scripts'); // Enqueue it!  
     }
@@ -116,14 +116,7 @@ function html5blank_styles()
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
 
-// Add custom post long-form into the default category feeds.
-function add_long_form_to_cat_feeds($query) {
-    if ( !is_admin() && $query->is_main_query() ) {
-      if ($query->is_category() || $query->is_archive()) {
-        $query->set( 'post_type', array( 'post', 'long-form' ) );
-      }
-    }
-  }
+
 
 // Register HTML5 Blank Navigation
 function register_html5_menu()
@@ -349,11 +342,10 @@ add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comment
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
-add_action('init', 'create_post_type_longform'); // Add the custom Long form article post type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
-add_action('after_theme_switch', 'create_post_type_longform');
-add_action('pre_get_posts','add_long_form_to_cat_feeds');  // Add custom long-form post types to the default category feed.
+
+
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -440,56 +432,7 @@ function create_post_type_html5()
     ));
 }
 
-// Create the custom 'Long Form' post type.
-function create_post_type_longform()
-{
-    register_taxonomy_for_object_type('category', 'html5blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5blank');
-    register_post_type('long-form', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('Long Form Articles', 'html5blank'), // Rename these to suit
-            'singular_name' => __('Long Form Article', 'html5blank'),
-            'add_new' => __('Add New', 'Long Form Article'),
-            'add_new_item' => __('Add New Long Form Article', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit Long Form Article', 'html5blank'),
-            'new_item' => __('New Long Form Article', 'html5blank'),
-            'view' => __('View Long Form Article', 'html5blank'),
-            'view_item' => __('View Long Form Article', 'html5blank'),
-            'search_items' => __('Search Long Form Articles', 'html5blank'),
-            'not_found' => __('No Long Form Articles found', 'html5blank'),
-            'not_found_in_trash' => __('No Long Form Articles found in Trash', 'html5blank')
-        ),
-        'public' => true,
-        'show_in_rest' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => false,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Long Form Article post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ), // Add Category and Post Tags support
-        'rewrite' => array( 
-            'slug' => 'stories',
-        ), //Rename the slug to insert into single long form post types permalinks - now will be /stories/post-name
-    ));
-}
 
-// Flush the rewrite rules for defining the long form custom post.
-function flush_rewrite_for_long_form(){
-
-	create_post_type_longform();
-
-	//Flush the rewrite rules
-	flush_rewrite_rules();
-}
 
 
 /*------------------------------------*\

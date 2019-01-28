@@ -35,7 +35,8 @@
 						<?php bloginfo( 'name' ); ?>
 					</a>
 				</div>
-				<?php if( is_singular('long-form') ) :  ?>
+				<?php //if( is_singular('long-form') ) :  ?>
+				<?php if( is_single() ) :  ?>
 					<div class="main-header__contents-toggle main-header__toggle main-header__partition main-header__partition--right" id="mobile-contents-toggle">Contents</div>
 				<?php else: ?>
 					<div class="main-header__contents-toggle main-header__toggle main-header__partition main-header__partition--right"></div>
@@ -55,7 +56,8 @@
 					</nav>
 					<!-- /nav -->
 					
-					<?php if( is_singular('long-form') ) :  ?>
+					<?php //if( is_singular('long-form') ) :  ?>
+					<?php if( is_single() ) :  ?>
 						<div class="article-contents" id="article-contents">
 							<ul class="article-contents__list" id="article-contents-list">
 							</ul>
