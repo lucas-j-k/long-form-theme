@@ -1,0 +1,71 @@
+//Desktop styles
+
+@media only screen and (min-width: $breakpoint-lg){
+
+
+
+
+    .main-content {
+        width:70%;
+        margin: 0 auto;
+        background-color: $white;
+    }
+
+    .standard-loop {
+        &__article {
+            width: 31%;
+            margin: $spacing-md 1%;
+        }
+    }
+
+    .single-long-form {
+        &__article {}
+        &__header {
+            height: 70vh;
+        }
+    }
+
+    .body-text {
+        h2 {
+            max-width: 100%;
+        }
+    }
+
+    .submit-article {
+        &__cta {
+            width: 20%;
+            font-size: $font-size-sm;
+        }
+        &__heading {
+            font-size: $font-size-sm;
+        }
+    }
+
+    .global-footer {
+        p {
+            font-size: $font-size-sm;
+        }
+    }
+
+    .article-contents {
+        ul {
+            li {
+                a {
+                    font-size: $font-size-sm;
+                }
+            }
+        }
+    }
+
+    .main-nav {
+        ul {
+            li {
+                a {
+                    font-size: $font-size-sm;
+                }
+            }
+        }
+    }
+    
+
+}

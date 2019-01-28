@@ -1,0 +1,411 @@
+// Base styles - mobile first. Overwrite these with media queries in _tablet.scss and _desktop.scss
+
+* {
+    box-sizing: border-box;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+}
+
+a {
+    text-decoration: none;
+    color: $grey-dark-1;
+    border-bottom: $primary-accent-light-2;
+}
+
+//Reset bold on headings
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+}
+
+h1,h2,h3,h4,h5,h6,p,a,span,li {
+    line-height: 1.5;
+    font-family: $font-family-base;
+}
+
+//Push the main content down below the fixed mobile menu bar
+.offset-mobile-menu {
+    margin-top: $mobile-header-height;
+}
+
+.main-content {
+    min-height: 100vh;
+}
+
+.cta {
+    padding: $spacing-md;
+    display: inline-block;
+    font-weight: bold;
+    background-color: $primary-accent-light-2;
+    text-align: center;
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-md;
+    &--center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+//Menu / Header styles
+
+.main-header {
+    height: $mobile-header-height;
+    align-items: center;
+    background-color: $grey-dark-2;
+    color: $white;
+    padding: $spacing-sm;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &__partition {
+        width: 32%;
+        &--left {
+            text-align: left;
+        }
+        &--center {
+            text-align: center;
+        }
+        &--right {
+            text-align: right;
+        }
+    }
+    &__toggle {
+        color: $white;
+        font-size: $font-size-lg;
+        padding: $spacing-sm;
+        cursor: pointer;
+    }
+    &__title {
+        a {
+            color: $grey-light-2;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: $font-size-sm;
+        }
+    }
+}
+
+//Main navigation panel
+.main-nav {
+    padding: $spacing-xl $spacing-md;
+    position: fixed;
+    top: $mobile-header-height;
+    z-index: 100;
+    background-color: $grey-dark-2;
+    width: 180px;
+    transition: 0.3s;
+    // @include box-shadow-left;
+    ul {
+        margin-bottom: $spacing-xl;
+        li {
+            padding: $spacing-md;
+            margin-bottom: $spacing-md;
+            a {
+                color: $grey-light-2;
+                font-size: $font-size-lg;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+//Table of contents for article pages
+.article-contents {
+    position: fixed;
+    width: 140px;
+    top: $mobile-header-height;
+    right: 0;
+    z-index: 100;
+    background-color: $grey-dark-2;
+    transition: 0.3s;
+    // @include box-shadow-right;
+    ul {
+        padding: $spacing-xl $spacing-md;
+        margin-bottom: $spacing-xl;
+        li {
+            padding: $spacing-md;
+            margin-bottom: $spacing-md;
+            a {
+                color: $grey-light-2;
+                font-size: $font-size-md;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+.category-menu {
+    padding-bottom: $spacing-xxl;
+    &__list {
+        background-color: $grey-light-2;
+        padding: $spacing-xl $spacing-sm;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        li {
+            background-color: $primary-accent-light-2;
+            width: 48%;
+            text-align: center;
+            margin: $spacing-sm 0;
+            padding: $spacing-sm;
+            a {
+                color: $grey-dark-2;
+                font-weight: bold;
+                font-size: $font-size-sm;
+                padding: $spacing-md;
+                
+            }
+        }
+    }
+}
+
+.submit-article {
+    background-color: $grey-light-2;
+    margin-top: $spacing-xl;
+    &__heading {
+        font-size: $font-size-md;
+        padding: $spacing-xl;
+        background-color: $grey-dark-2;
+        color: $grey-light-2;
+    }
+    &__cta {
+        background-color: $primary-accent-light-2;
+        padding: $spacing-lg;
+        font-size: $font-size-md;
+        display: block;
+        margin: 0 auto;
+        width: 40%;
+        font-weight: bold;
+        text-align: center;
+    }
+    &__body {
+        padding: $spacing-lg;
+    }
+}
+
+
+//Generic single article styles - Long form and basic blog posts.
+.single-article {
+    
+}
+
+
+//Single long form article pages
+.single-long-form {
+    &__header {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: flex-end;
+        padding: $spacing-lg;
+    }
+    &__title {
+        margin-bottom: $spacing-xl;
+        background-color: rgba($white, 0.4);
+        line-height: 1.3;
+        padding: $spacing-md;
+        a {
+            font-size: $font-size-title-mob;
+            text-decoration: none;
+            display: block;
+        }
+        span {
+            font-size: $font-size-sm;
+            color: $grey-dark-1;
+            display: inline-block;
+            border-bottom: 1px solid $primary-accent-mid;
+            padding: $spacing-sm 0;
+        }
+    }
+    &__introduction {
+        font-size: $font-size-md;
+        color: $grey-light-1;
+        margin: $spacing-xl 0;
+    }
+
+    .body-text {
+        h1, h2 {
+            padding-top: $mobile-header-height + $spacing-xl;
+        }
+    }
+}
+
+//Body text of articles and pages
+.body-text {
+    padding: $spacing-md;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-lg;
+
+    h1, h2 {
+        font-size: $font-size-xl;
+        border-bottom: $primary-accent-mid 2px solid;
+        padding: $spacing-sm 0;
+        margin-bottom: $spacing-lg;
+        max-width: 80%;
+    }
+    h3 {
+        font-size: $font-size-lg;
+    }
+    h4, h5, h6 {
+        font-size: $font-size-md;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    p {
+        margin: $spacing-lg 0;
+        line-height: 1.5;
+    }
+    &__end {
+        color: $grey-dark-1;
+        font-style: italic;
+        font-size: $font-size-md;
+        text-align: center;
+        padding: $spacing-xl;
+        margin-top: $spacing-xl;
+    }
+}
+
+//Information boxes at the end of articles
+.article-info-box {
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+    &__title {
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-md;
+        padding-bottom: $spacing-sm;
+        max-width: 80%;
+        border-bottom: $primary-accent-mid solid 2px;
+    }  
+    &__author-name {
+        font-size: $font-size-md;
+        font-weight: bold;
+        color: $grey-dark-1;
+    }
+    &__author-headshot {
+        width: 200px;
+        height: 200px;
+    }
+    &__author-link {
+        background-color: $primary-accent-light-2;
+        padding: $spacing-sm;
+        font-size: $font-size-sm;
+    }
+    &__author-description {
+        width: 90%;
+    }
+}
+
+
+//Footer
+.global-footer {
+    padding: $spacing-xl $spacing-md;
+    background-color: $grey-dark-1;
+    p, a, ul, li, span {
+        color: $grey-light-2;
+    }
+    &__content {
+        width: 90%;
+        margin: 0 auto;
+        padding: $spacing-xl 0;
+    }
+}
+
+
+//Global page headings
+.global-page-title {
+    font-size: $font-size-xl;
+    padding: $spacing-md;
+    padding-left: 0;
+    border-bottom: 2px solid $primary-accent-mid;
+    width: 90%;
+    margin: 0 auto;
+}
+
+//Standard Loop page
+.standard-loop {
+    &__article {
+        width: 90%;
+        margin: $spacing-xxl auto;
+        padding: $spacing-xl 0;
+        padding-right: $spacing-md;
+    }
+    &__thumbnail-wrap {}
+    &__title {
+        a {
+            color: $primary-accent-mid;
+            font-size: $font-size-lg;
+        }
+    }
+}
+
+.static-page {
+    .page {
+        margin: $spacing-md auto;
+        width: 90%;
+    }
+}
+
+
+.social-links {
+    margin: $spacing-lg 0;
+    padding-top: $spacing-lg;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            padding: 0 $spacing-md;
+            margin: 0 $spacing-md;
+            a {  
+                i {
+                    font-size: $font-size-md;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.contact-form {
+    margin: $spacing-lg auto;
+    width: 90%;
+    &__form-group {
+        padding: $spacing-md 0;
+        label {
+            display: inline-block;
+            padding: $spacing-sm;
+            color: $grey-dark-1;
+            font-weight: bold;
+            margin-bottom: $spacing-sm;
+            font-size: $font-size-sm;
+        }
+        textarea {
+            min-height: 100px;
+        }
+    }
+    &__input {
+        &--text {
+            width: 100%;
+            border: 1px solid $grey-light-2;
+            padding: $spacing-sm;
+            &:focus {
+                border: 1px solid $primary-accent-mid;
+            }
+        }     
+    }
+    &__submit {
+        background-color: $primary-accent-light-2;
+        padding: $spacing-md;
+        font-weight: bold;
+        border: 0;
+    }    
+}
