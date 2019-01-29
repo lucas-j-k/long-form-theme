@@ -181,14 +181,15 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
     font-size: 18px;
     padding: 12px;
     background-color: #161615;
-    color: #8c8c87; }
+    color: #8c8c87;
+    text-align: center; }
   .submit-article__cta {
     background-color: #ff8d2f;
     padding: 10px;
     font-size: 18px;
     display: block;
     margin: 0 auto;
-    width: 40%;
+    width: 60%;
     font-weight: bold;
     text-align: center; }
   .submit-article__body {
@@ -260,6 +261,8 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
 .article-info-box {
   padding: 8px;
   margin-bottom: 8px; }
+  .article-info-box p {
+    margin: 8px 0; }
   .article-info-box__title {
     font-size: 20px;
     margin-bottom: 8px;
@@ -276,7 +279,8 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   .article-info-box__author-link {
     background-color: #ff8d2f;
     padding: 4px;
-    font-size: 14px; }
+    font-size: 14px;
+    margin: 8px 0; }
   .article-info-box__author-description {
     width: 90%; }
 
@@ -303,6 +307,10 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   margin: 14px auto;
   padding: 12px 0;
   padding-right: 8px; }
+
+.standard-loop__article-date {
+  color: #50504a;
+  margin-bottom: 4px; }
 
 .standard-loop__title a {
   color: #E1560D;
@@ -355,6 +363,8 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   .global-page-title {
     text-align: center;
     width: 90%; }
+  .global-footer p {
+    text-align: center; }
   .standard-loop {
     width: 90%;
     margin: 0 auto;

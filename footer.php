@@ -3,7 +3,7 @@
 </div>
 
 <section class="submit-article">
-	<h2 class="submit-article__heading">Got an article you would like us to consider?</h2>
+	<h3 class="submit-article__heading">Are you a writer?</h3>
 	<div class="submit-article__body">
 		<a href="#" class="submit-article__cta">Submit a Story</a>
 	</div>

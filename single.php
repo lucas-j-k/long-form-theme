@@ -101,7 +101,7 @@
 		<!-- article -->
 		<article>
 
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+			<h1><?php _e( 'Sorry, nothing to display.', 'longform' ); ?></h1>
 
 		</article>
 		<!-- /article -->

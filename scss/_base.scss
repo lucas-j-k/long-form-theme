@@ -171,6 +171,7 @@ h1,h2,h3,h4,h5,h6,p,a,span,li {
         padding: $spacing-xl;
         background-color: $grey-dark-2;
         color: $grey-light-2;
+        text-align: center;
     }
     &__cta {
         background-color: $primary-accent-light-2;
@@ -178,7 +179,7 @@ h1,h2,h3,h4,h5,h6,p,a,span,li {
         font-size: $font-size-md;
         display: block;
         margin: 0 auto;
-        width: 40%;
+        width: 60%;
         font-weight: bold;
         text-align: center;
     }
@@ -279,6 +280,9 @@ h1,h2,h3,h4,h5,h6,p,a,span,li {
 .article-info-box {
     padding: $spacing-md;
     margin-bottom: $spacing-md;
+    p {
+        margin: $spacing-md 0;
+    }
     &__title {
         font-size: $font-size-lg;
         margin-bottom: $spacing-md;
@@ -299,6 +303,7 @@ h1,h2,h3,h4,h5,h6,p,a,span,li {
         background-color: $primary-accent-light-2;
         padding: $spacing-sm;
         font-size: $font-size-sm;
+        margin: $spacing-md 0;
     }
     &__author-description {
         width: 90%;
@@ -339,7 +344,10 @@ h1,h2,h3,h4,h5,h6,p,a,span,li {
         padding: $spacing-xl 0;
         padding-right: $spacing-md;
     }
-    &__thumbnail-wrap {}
+    &__article-date {
+        color: $grey-light-1;
+        margin-bottom: $spacing-sm;
+    }
     &__title {
         a {
             color: $primary-accent-mid;

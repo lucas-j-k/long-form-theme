@@ -24,7 +24,7 @@
 
 	<!-- section -->
 	<section>
-		<h1 class="global-page-title"><?php _e( 'Latest Stories', 'html5blank' ); ?></h1>
+		<h1 class="global-page-title"><?php _e( 'Latest Stories', 'longform' ); ?></h1>
 
 		<div class="standard-loop">
 			<?php get_template_part('loop'); ?>
